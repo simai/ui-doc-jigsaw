@@ -42,18 +42,18 @@
         @endif
     </head>
 
-    <body class="flex flex-col justify-between min-h-screen bg-gray-100 text-gray-800 leading-normal font-sans">
-        <header class="flex items-center shadow bg-white border-b h-24 mb-8 py-4" role="banner">
-            <div class="container flex items-center max-w-8xl mx-auto px-4 lg:px-8">
-                <div class="flex items-center">
-                    <a href="/" title="{{ $page->siteName }} home" class="inline-flex items-center">
-                        <img class="h-8 md:h-10 mr-3" src="/assets/img/logo.svg" alt="{{ $page->siteName }} logo" />
+    <body class="flex flex-col content-cross-between items-cross-stretch min-h-full bg-surface-0 text-on-surface leading-normal font-sans">
+        <header class="flex items-cross-center shadow-2 bg-surface-1 border-b h-b6 mb-a8 py-a4" role="banner">
+            <div class="container flex items-cross-center max-w-screen-xl mx-auto px-a4 lg:px-a8">
+                <div class="flex items-cross-center">
+                    <a href="/" title="{{ $page->siteName }} home" class="inline-flex items-cross-center">
+                        <img class="h-b2 md:h-b3 mr-a4" src="/assets/img/logo.svg" alt="{{ $page->siteName }} logo" />
 
-                        <h1 class="text-lg md:text-2xl text-blue-900 font-semibold hover:text-blue-600 my-0 pr-4">{{ $page->siteName }}</h1>
+                        <h1 class="text-size-2 md:text-size-3 text-primary font-semibold hover:text-primary-hover m-0 pr-a4">{{ $page->siteName }}</h1>
                     </a>
                 </div>
 
-                <div class="flex flex-1 justify-end items-center text-right md:pl-10">
+                <div class="flex flex-1 justify-end items-cross-center text-right md:pl-a10">
                     @if ($page->docsearchApiKey && $page->docsearchIndexName)
                         @include('_nav.search-input')
                     @endif
@@ -71,9 +71,9 @@
 
         @stack('scripts')
 
-        <footer class="bg-white text-center text-sm mt-12 py-4" role="contentinfo">
+        <footer class="bg-surface-1 text-center text-size-1 mt-a12 py-a4" role="contentinfo">
             <ul class="flex flex-col md:flex-row justify-center">
-                <li class="md:mr-2">
+                <li class="md:mr-a4">
                     &copy; <a href="https://tighten.co" title="Tighten website">Tighten</a> {{ date('Y') }}.
                 </li>
 
