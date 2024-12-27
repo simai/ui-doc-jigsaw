@@ -31,35 +31,5 @@
     </div>
 </section>
 @endsection
-
-<header class="flex items-cross-center shadow-2 bg-surface-1 border-b h-b8 mb-a8 py-a4" role="banner">
-    <div class="container flex items-cross-center max-w-screen-xl mx-auto px-a4 lg:px-a8">
-        <div class="flex items-cross-center">
-            <a href="/" title="{{ $page->siteName }} home" class="inline-flex items-cross-center">
-                <img class="h-b2 md:h-b3 mr-a4" src="/assets/img/logo.svg" alt="{{ $page->siteName }} logo" />
-
-                <h1 class="text-size-2 md:text-size-3 text-primary font-semibold hover:text-primary-hover m-0 pr-a4">{{ $page->siteName }}</h1>
-            </a>
-        </div>
-
-        <div class="flex flex-1 justify-end items-cross-center text-right md:pl-a10">
-            <button id="theme-toggle" class="px-a4 py-a2 bg-surface-2 text-on-surface rounded cursor-pointer">Switch Theme</button>
-            @if ($page->docsearchApiKey && $page->docsearchIndexName)
-                @include('_nav.search-input')
-            @endif
-        </div>
-    </div>
-
-    @yield('nav-toggle')
-</header>
-
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const themeToggle = document.getElementById('theme-toggle');
-        themeToggle.addEventListener('click', () => {
-            document.documentElement.classList.toggle('dark');
-        });
-    });
-</script>
     </body>
 </html>
