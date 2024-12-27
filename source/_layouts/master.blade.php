@@ -79,7 +79,7 @@
 
                 <li>
                     Built with <a href="http://jigsaw.tighten.co" title="Jigsaw by Tighten">Jigsaw</a>
-                    and <a href="https://tailwindcss.com" title="Tailwind CSS, a utility-first CSS framework">Tailwind CSS</a>.
+                    and <a href="https://simai.io" title="SIMAI Framework">Tailwind CSS</a>.
                 </li>
             </ul>
         </footer>
