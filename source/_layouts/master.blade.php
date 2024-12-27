@@ -17,8 +17,8 @@
     <meta name="twitter:card" content="summary_large_image">
 
     <!-- Подключение минимизированных стилей из SIMAI Framework -->
-    <link rel="stylesheet" href="{{ asset('css/utility.full.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/core.min.css') }}">
+    <link rel="stylesheet" href="{{ mix('css/utility.full.min.css') }}">
+    <link rel="stylesheet" href="{{ mix('css/core.min.css') }}">
 </head>
 <body>
     <header>
