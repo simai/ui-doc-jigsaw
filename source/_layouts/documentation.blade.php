@@ -1,25 +1,35 @@
-@extends('_layouts.master')
+<!DOCTYPE html>
+<html lang="{{ $page->language ?? 'en' }}">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="canonical" href="{{ $page->getUrl() }}">
+        <meta name="description" content="{{ $page->description }}">
+        <title>{{ $page->title }}</title>
+        <link rel="stylesheet" href="{{ mix('css/main.css', 'assets/build') }}">
+        <script defer src="{{ mix('js/main.js', 'assets/build') }}"></script>
+    </head>
+    <body class="text-on-surface font-sans antialiased">
+        @yield('body')
 
-@section('title', 'Документация')
+        @extends('_layouts.master')
 
-@section('content')
-    <div class="container mx-auto py-6">
-        <h1 class="text-3xl font-bold text-primary">Добро пожаловать в документацию</h1>
-        <p class="mt-4 text-lg text-secondary">Здесь вы найдёте всю необходимую информацию для начала работы.</p>
+@section('nav-toggle')
+    @include('_nav.menu-toggle')
+@endsection
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
-            <div class="p-4 bg-surface-1 rounded shadow hover:shadow-lg">
-                <h2 class="text-xl font-semibold text-on-surface">Раздел 1</h2>
-                <p class="mt-2 text-sm text-on-surface-variant">Описание первого раздела документации.</p>
-            </div>
-            <div class="p-4 bg-surface-1 rounded shadow hover:shadow-lg">
-                <h2 class="text-xl font-semibold text-on-surface">Раздел 2</h2>
-                <p class="mt-2 text-sm text-on-surface-variant">Описание второго раздела документации.</p>
-            </div>
-            <div class="p-4 bg-surface-1 rounded shadow hover:shadow-lg">
-                <h2 class="text-xl font-semibold text-on-surface">Раздел 3</h2>
-                <p class="mt-2 text-sm text-on-surface-variant">Описание третьего раздела документации.</p>
-            </div>
+@section('body')
+<section class="container max-w-screen-xl mx-auto px-a6 md:px-a8 py-a4">
+    <div class="flex flex-col lg:flex-row">
+        <nav id="js-nav-menu" class="nav-menu hidden lg:block">
+            @include('_nav.menu', ['items' => $page->navigation])
+        </nav>
+
+        <div class="DocSearch-content w-full lg:w-3/5 break-words pb-a16 lg:pl-a4" v-pre>
+            @yield('content')
         </div>
     </div>
+</section>
 @endsection
+    </body>
+</html>
